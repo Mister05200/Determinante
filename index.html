@@ -89,6 +89,9 @@
             display: block;
             border: 1px solid #ddd;
         }
+		.formula img{
+			width: 100%
+		}
         .carousel-caption {
             padding: 10px;
             background: rgba(0,0,0,0.7);
@@ -170,7 +173,7 @@
     
 
 	<div class="slide">
-        <h2>Sarrusovo pravilo (skraćenica za 3×3)</h2>
+        <h2>Sarusovo pravilo (skraćenica za 3×3)</h2>
         <p><strong>Samo za 3×3 matrice!</strong></p>
         <ol>
             <li>Napiši prve dve kolone ponovo sa desne strane.</li>
@@ -229,11 +232,25 @@
         <ul>
             <li>Izaberi red (npr. prvi red).</li>
             <li>Za svaki element, pomnoži ga sa determinantom 3×3 podmatrice koja ostane nakon uklanjanja njegovog reda i kolone, sa naizmeničnim predznacima.</li>
-        </ul>
-        <div class="formula">
+			
+        
+        </ul>        <div class="formula">
             \[ \text{det}(A) = a \cdot \text{det}(3×3) - b \cdot \text{det}(3×3) + c \cdot \text{det}(3×3) - d \cdot \text{det}(3×3) \]
+        </div><p><em>Hint za podmatrice:</em></p>
+<div class="formula">
+            <img src="stepB1.png" alt="Podmatrice hint">
         </div>
-        <p><em>(Računica je duga, ali princip je isti kao kod 3×3.)</em></p>
+
+        <p><strong>Primer:</strong></p>
+		<div class="matrix">
+            \( A = \begin{pmatrix} 2 & 3 & -1 & 5 \\ 0 & 1 & 2 & -4 \\ 3 & 0 & 2 & 1 \\ 1 & 0 & 3 & -2 \end{pmatrix} \)
+        </div>
+        <div class="formula">
+        	
+            <img src="stepB2.png" alt="Resavanje 4x4 matrice">
+        </div>
+
+        <p><strong>Rešenje: 56</strong></p>
     </div>
 	<div class="slide">
         <h2>Determinanta 3×3 matrice (Laplaceov razvoj)</h2>
@@ -255,25 +272,17 @@
         </div>
     </div>
     <div class="slide">
-        <h2>Pravila determinanti</h2>
+        <h2>Vrednost determinante</h2>
         <div class="rules">
-            <ol>
-                <li><strong>Zamena redova/kolona:</strong><br>
-                    Zamena dva reda/kolone menja znak determinante.<br>
-                    <em>Primer: Ako je \( \text{det}(A) = 5 \), posle zamene, \( \text{det}(A) = -5 \).</em></li>
-                
-                <li><strong>Množenje reda skalarom:</strong><br>
-                    Množenje reda sa \( k \) množi determinantu sa \( k \).</li>
-                
-                <li><strong>Dodavanje redova:</strong><br>
-                    Dodavanje umnoška jednog reda drugom ne menja determinantu.</li>
-                
-                <li><strong>Nula red/kolona:</strong><br>
-                    Ako je ceo red/kolona nula, \( \text{det}(A) = 0 \).</li>
-                
-                <li><strong>Trougaona matrica:</strong><br>
-                    Za gornje/donje trougaone matrice, determinanta je proizvod dijagonalnih elemenata.</li>
-            </ol>
+			<ol>
+				<li><strong>Ne menja se, ako:</strong> <em><ol type="a"><li>sve vrste i odgovarajuće kolone zamene mesta;</li> <li>jednoj vrsti (koloni) dodamo drugu pomnoženu nekim brojem.</li></ol></em></li>
+				
+				<li><strong>Menja znak ako dve vrste (kolone) razmene mesta;</strong></li>
+				
+				<li><strong>Uvećava se k puta ako jednu vrstu (kolonu) pomnožimo sa k;</strong></li>
+				
+				<li><strong>Jednaka je nuli ako:</strong> <em><ol type="a"><li>jedna vrsta (kolona) sadrži samo nule;</li> <li>dve vrste (kolone) su jednake;</li> <li>dve vrste (kolone) su proporcionalne.</li></ol></em></li>
+			</ol>
         </div>
     </div>
 
@@ -281,7 +290,6 @@
         <h2>Primene determinanti</h2>
         <ul>
             <li>Rešavanje sistema jednačina (<strong>Kramerovo pravilo</strong>).</li>
-            <li>Nalaženje <strong>inverza matrice</strong>.</li>
             <li>Provera da li je matrica <strong>invertibilna</strong> (ako je det = 0, nije invertibilna).</li>
             <li>Koristi se u <strong>analizi, fizici i inženjerstvu</strong> za transformacije.</li>
         </ul>
@@ -291,8 +299,8 @@
         <h2>Zaključak</h2>
         <ul>
             <li><strong>2×2:</strong> Jednostavno \( ad - bc \).</li>
-            <li><strong>3×3:</strong> Laplaceov razvoj ili Sarrusovo pravilo.</li>
-            <li><strong>4×4+:</strong> Laplaceov razvoj (rekurzivno).</li>
+            <li><strong>3×3:</strong> Laplaceov razvoj ili Sarusovo pravilo.</li>
+            <li><strong>4×4+:</strong> Laplaceov razvoj.</li>
             <li><strong>Pravila:</strong> Zamena menja znak, množenje utiče na det, dodavanje redova ne menja det.</li>
         </ul>
     </div>
